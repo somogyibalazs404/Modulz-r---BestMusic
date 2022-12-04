@@ -24,7 +24,6 @@ use App\Lib\App;
 use App\Lib\Router;
 use App\Lib\Request;
 use App\Lib\Response;
-use App\Controller\Home;
 use App\Controller\GuitarController;
 use App\Model\GuitarDao;
 use Twig\Environment;
@@ -34,7 +33,7 @@ use Twig\Loader\FilesystemLoader;
 
 
 Router::get('/', function () {
-    (new Home())->indexAction();
+    (new GuitarController())->home();
 });
 
 Router::get('/guitars', function (Request $req, Response $res) {
